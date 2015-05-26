@@ -14,7 +14,7 @@ def calculation
   puts 'Enter first number:'
   num1 = gets.chomp
 
-  until is_number?(num1) == true do
+  until is_number?(num1)
     puts 'Number not recognized, please re-enter:'
     num1 = gets.chomp
   end
@@ -22,16 +22,15 @@ def calculation
   operators = ['+', '-', '*', '/']
   selected_operator = ''
 
-  until operators.include?(selected_operator) == true do
+  until operators.include?(selected_operator)
     puts 'Enter operator (+,  -,  *  or /)'
     selected_operator = gets.chomp
   end
 
-
   puts 'Enter second number:'
   num2 = gets.chomp
 
-  until is_number?(num2) == true do
+  until is_number?(num2)
     puts 'Number not recognized, please re-enter:'
     num2 = gets.chomp
   end
