@@ -5,7 +5,6 @@
 
 # calculator.rb
 
-require 'pry'
 
 def is_number?(data_entered)
   true if Float(data_entered) rescue false
@@ -48,21 +47,19 @@ def calculation
     answer = num1.to_f / num2.to_f
   end
 
-  #answer = answer.to_i if (answer % 1 == 0)?  # this did not work
-
   if answer % 1 == 0
     answer = answer.to_i
   end
-
 
   puts "Answer is #{answer}"
 
 end
 
-continue = ''
+continue = 'y'
 
-until continue == 'n' do
+until continue != 'y' do
   calculation
-  puts "Do you want to perform another calculation? (y/n)"
+  puts "Do you want to perform another calculation?"
+  puts "Enter y to continue or anything else to exit"
   continue = gets.chomp
 end
