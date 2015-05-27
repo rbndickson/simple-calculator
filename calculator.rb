@@ -10,7 +10,7 @@ def is_number?(data_entered)
   true if Float(data_entered) rescue false
 end
 
-def calculation
+loop do
   puts 'Enter first number:'
   num1 = gets.chomp
 
@@ -35,7 +35,6 @@ def calculation
     num2 = gets.chomp
   end
 
-
   if selected_operator == '+'
     answer = num1.to_f + num2.to_f
   elsif selected_operator == '-'
@@ -51,14 +50,7 @@ def calculation
   end
 
   puts "Answer is #{answer}"
-
-end
-
-continue = 'y'
-
-until continue != 'y' do
-  calculation
   puts "Do you want to perform another calculation?"
   puts "Enter y to continue or anything else to exit"
-  continue = gets.chomp
+  break if gets.chomp.downcase != 'y'
 end
